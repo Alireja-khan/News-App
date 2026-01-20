@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { NewsArticle } from "@/types/news";
 import Image from "next/image";
 
-
 interface NewsCardProps {
     article: NewsArticle;
 }
@@ -20,6 +19,7 @@ export default function NewsCard({ article }: NewsCardProps) {
                             fill
                             className="object-cover rounded-t-lg"
                             sizes="(max-width: 768px) 100vw, 33vw"
+                            unoptimized={true}
                         />
                     </CardHeader>
                 )}
@@ -28,7 +28,7 @@ export default function NewsCard({ article }: NewsCardProps) {
                     <Badge variant="secondary" className="self-start">
                         Top News
                     </Badge>
-                    <h3 className="font-semibold text-lg line-clamp-2">
+                    <h3 className="font-semibold text-lg line-clamp send-2">
                         {article.title}
                     </h3>
                     {article.description && (
